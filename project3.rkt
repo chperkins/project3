@@ -1,879 +1,125 @@
-#reader(lib"read.ss""wxme")WXME0108 ## 
-#|
-   This file uses the GRacket editor format.
-   Open this file in DrRacket version 5.3.6 or later to read it.
+;;; ========================================
+;;;  CSC 173, Fall 2016
+;;;  Project 3 file
+;;; ========================================
 
-   Most likely, it was created by saving a program in DrRacket,
-   and it probably contains a program with non-text elements
-   (such as images or comment boxes).
+(display "\n         CS173 Project 3, Fall 2016\n")
+(display "\n         Charlie Perkins\n\n")
 
-            http://racket-lang.org/
-|#
- 30 7 #"wxtext\0"
-3 1 6 #"wxtab\0"
-1 1 8 #"wximage\0"
-2 0 8 #"wxmedia\0"
-4 1 34 #"(lib \"syntax-browser.ss\" \"mrlib\")\0"
-1 0 16 #"drscheme:number\0"
-3 0 44 #"(lib \"number-snip.ss\" \"drscheme\" \"private\")\0"
-1 0 36 #"(lib \"comment-snip.ss\" \"framework\")\0"
-1 0 93
-(
- #"((lib \"collapsed-snipclass.ss\" \"framework\") (lib \"collapsed-sni"
- #"pclass-wxme.ss\" \"framework\"))\0"
-) 0 0 43 #"(lib \"collapsed-snipclass.ss\" \"framework\")\0"
-0 0 19 #"drscheme:sexp-snip\0"
-0 0 36 #"(lib \"cache-image-snip.ss\" \"mrlib\")\0"
-1 0 68
-(
- #"((lib \"image-core.ss\" \"mrlib\") (lib \"image-core-wxme.rkt\" \"mr"
- #"lib\"))\0"
-) 1 0 29 #"drscheme:bindings-snipclass%\0"
-1 0 88
-(
- #"((lib \"pict-snip.rkt\" \"drracket\" \"private\") (lib \"pict-snip.r"
- #"kt\" \"drracket\" \"private\"))\0"
-) 0 0 33 #"(lib \"bullet-snip.ss\" \"browser\")\0"
-0 0 25 #"(lib \"matrix.ss\" \"htdp\")\0"
-1 0 22 #"drscheme:lambda-snip%\0"
-1 0 26 #"drracket:spacer-snipclass\0"
-0 0 57
-#"(lib \"hrule-snip.rkt\" \"macro-debugger\" \"syntax-browser\")\0"
-1 0 26 #"drscheme:pict-value-snip%\0"
-0 0 45 #"(lib \"image-snipr.ss\" \"slideshow\" \"private\")\0"
-1 0 38 #"(lib \"pict-snipclass.ss\" \"slideshow\")\0"
-2 0 55 #"(lib \"vertical-separator-snip.ss\" \"stepper\" \"private\")\0"
-1 0 18 #"drscheme:xml-snip\0"
-1 0 31 #"(lib \"xml-snipclass.ss\" \"xml\")\0"
-1 0 21 #"drscheme:scheme-snip\0"
-2 0 34 #"(lib \"scheme-snipclass.ss\" \"xml\")\0"
-1 0 10 #"text-box%\0"
-1 0 32 #"(lib \"text-snipclass.ss\" \"xml\")\0"
-1 0 1 6 #"wxloc\0"
-          0 0 56 0 1 #"\0"
-0 75 1 #"\0"
-0 12 90 -1 90 -1 3 -1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 255 255 255 1 -1 0 9
-#"Standard\0"
-0 75 12 #"Courier New\0"
-0 13 90 -1 90 -1 3 -1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 255 255 255 1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 -1 -1 2 24
-#"framework:default-color\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 150 0 150 0 0 0 -1 -1 2 15
-#"text:ports out\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 150 0 150 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1.0 0 -1 -1 93 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 255 0 0 0 0 0 -1
--1 2 15 #"text:ports err\0"
-0 -1 1 #"\0"
-1.0 0 -1 -1 93 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 255 0 0 0 0 0 -1
--1 2 1 #"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 175 0 0 0 -1 -1 2 17
-#"text:ports value\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 175 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1.0 0 92 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 34 139 34 0 0 0 -1
--1 2 27 #"Matching Parenthesis Style\0"
-0 -1 1 #"\0"
-1.0 0 92 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 34 139 34 0 0 0 -1
--1 2 1 #"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 38 38 128 0 0 0 -1 -1 2 37
-#"framework:syntax-color:scheme:symbol\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 38 38 128 0 0 0 -1 -1 2 38
-#"framework:syntax-color:scheme:keyword\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 38 38 128 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 194 116 31 0 0 0 -1 -1 2
-38 #"framework:syntax-color:scheme:comment\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 194 116 31 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 37
-#"framework:syntax-color:scheme:string\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 39
-#"framework:syntax-color:scheme:constant\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 41 128 38 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 132 60 36 0 0 0 -1 -1 2 49
-#"framework:syntax-color:scheme:hash-colon-keyword\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 132 60 36 0 0 0 -1 -1 2 42
-#"framework:syntax-color:scheme:parenthesis\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 132 60 36 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 36
-#"framework:syntax-color:scheme:error\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 36
-#"framework:syntax-color:scheme:other\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 16
-#"Misspelled Text\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 81 112 203 0 0 0 -1 -1 2
-38 #"drracket:check-syntax:lexically-bound\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 81 112 203 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 178 34 34 0 0 0 -1 -1 2 28
-#"drracket:check-syntax:set!d\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 178 34 34 0 0 0 -1 -1 2 37
-#"drracket:check-syntax:unused-require\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 36
-#"drracket:check-syntax:free-variable\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 255 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 68 0 203 0 0 0 -1 -1 2 31
-#"drracket:check-syntax:imported\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 68 0 203 0 0 0 -1 -1 2 47
-#"drracket:check-syntax:my-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 178 34 34 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 116 0 0 0 0 -1 -1 2 50
-#"drracket:check-syntax:their-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 116 0 0 0 0 -1 -1 2 48
-#"drracket:check-syntax:unk-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 139 142 28 0 0 0 -1 -1 2
-49 #"drracket:check-syntax:both-obligation-style-pref\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 139 142 28 0 0 0 -1 -1 2
-26 #"plt:htdp:test-coverage-on\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 1
-#"\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 1 0 0 0 0 0 0 255 165 0 0 0 0 -1 -1 2 27
-#"plt:htdp:test-coverage-off\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 1 0 0 0 0 0 0 255 165 0 0 0 0 -1 -1 4 1
-#"\0"
-0 70 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 4 4 #"XML\0"
-0 70 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 2 37 #"plt:module-language:test-coverage-on\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 -1 -1 2 38
-#"plt:module-language:test-coverage-off\0"
-0 -1 1 #"\0"
-1 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 1 0 0 0 0 0 0 255 165 0 0 0 0 -1 -1 4 1
-#"\0"
-0 71 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 4 1 #"\0"
-0 -1 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 1 0 0 0 0 0 0 0 0 1.0 1.0 1.0 0 0 255 0 0 0 -1
--1 4 1 #"\0"
-0 71 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 1 0 0 0 0 0 0 0 0 1.0 1.0 1.0 0 0 255 0 0 0 -1
--1 4 1 #"\0"
-0 71 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 1.0 1.0 1.0 0 100 0 0 0 0 -1
--1 0 1 #"\0"
-0 -1 1 #"\0"
-0 13 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1 2 1 #"\0"
-0 -1 1 #"\0"
-0 13 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 1.0 1.0 1.0 1.0 1.0 1.0 0 0 0 0 0 0
--1 -1           0 648 0 17 3 44
-#";;; ========================================"
-0 0 23 29 1 #"\n"
-0 0 17 3 23 #";;;  CSC 173, Fall 2016"
-0 0 23 29 1 #"\n"
-0 0 17 3 19 #";;;  Project 3 file"
-0 0 23 29 1 #"\n"
-0 0 17 3 44 #";;; ========================================"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"display"
-0 0 23 3 1 #" "
-0 0 19 3 41 #"\"\\n         CS173 Project 3, Fall 2016\\n\""
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"display"
-0 0 23 3 1 #" "
-0 0 19 3 32 #"\"\\n         Charlie Perkins\\n\\n\""
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"newline"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"newline"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"display"
-0 0 23 3 1 #" "
-0 0 19 3 41 #"\"Problem 1: Printing Perfect Numbers\\n\\n\""
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 17 3 80
-(
- #";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
- #";;;;;;;;;;;;"
-) 0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 17 3 42 #";; Contract: (find-factors num) -> integer"
-0 0 23 29 1 #"\n"
-0 0 17 3 39 #";; Input:    num: positive integer >= 2"
-0 0 23 29 1 #"\n"
-0 0 17 3 65
-#";; Purpose:  returns them of the factors of num other than itself"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 17 3 23 #";; Function definition:"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 12 #"find-factors"
-0 0 23 29 1 #"\n"
-0 0 23 3 2 #"  "
-0 0 23 3 1 #"("
-0 0 15 3 6 #"lambda"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 17 3 26 #";creates local environment"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 23 3 1 #"("
-0 0 15 3 5 #"local"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"("
-0 0 23 3 1 #"["
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 7 #"fac-loc"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 17 3 27 #";uses num2 and acc1 locally"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 17 3 44 #";num2 is a divisor. acc1 is a sum of factors"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 23 3 1 #"("
-0 0 15 3 6 #"lambda"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"acc1"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 11 #"           "
-0 0 23 3 1 #"("
-0 0 15 3 4 #"cond"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 56 #";base case. if num2> num1/2, then num2 can't be a factor"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 17 #";end the function"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 1 #">"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"/"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"2"
-0 0 23 3 2 #"))"
-0 0 23 29 1 #"\n"
-0 0 23 3 14 #"              "
-0 0 14 3 4 #"acc1"
-0 0 23 3 1 #"]"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 62
-#";recursive case 1. if num2 divides num1, add to sum of factors"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 8 #"integer?"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"/"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #" "
-0 0 23 29 1 #"\n"
-0 0 23 3 14 #"              "
-0 0 23 3 1 #"("
-0 0 14 3 7 #"fac-loc"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"+"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #")"
-0 0 23 3 2 #" ("
-0 0 14 3 1 #"+"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"acc1"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 61
-#";recursive case 2. if num2 doesn't divide num1, don't add it."
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 29 #";just call fac-loc for num2+1"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 23 3 1 #"["
-0 0 14 3 4 #"else"
-0 0 23 3 2 #" ("
-0 0 14 3 7 #"fac-loc"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"+"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #")"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"acc1"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 11 #";local call"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"("
-0 0 14 3 7 #"fac-loc"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"0"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 17 3 68
-(
- #";; Contract: (a-d-or-p num) -> \"Abundant\", \"Deficient\", or \"Per"
- #"fect\""
-) 0 0 23 29 1 #"\n"
-0 0 17 3 37 #";; Input:    num: positive number > 2"
-0 0 23 29 1 #"\n"
-0 0 17 3 67
-#";; Purpose:  returns whether num is abundant, deficient, or perfect"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 8 #"a-d-or-p"
-0 0 23 29 1 #"\n"
-0 0 23 3 2 #"  "
-0 0 23 3 1 #"("
-0 0 15 3 6 #"lambda"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 17 3 66
-#";stores the sum of the factors so that we make this call only once"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 17 3 59
-#";this is a form of memoization, although a really basic one"
-0 0 23 29 1 #"\n"
-0 0 23 3 5 #"    ("
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"val"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 12 #"find-factors"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 23 3 1 #"("
-0 0 15 3 4 #"cond"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 7 #";case 1"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 38 #"; sum is greater than number. abundant"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 1 #">"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"val"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 19 3 10 #"\"Abundant\""
-0 0 23 3 1 #"]"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 7 #";case 2"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 36 #"; sum is less than number. deficient"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 1 #"<"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"val"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 19 3 11 #"\"Deficient\""
-0 0 23 3 1 #"]"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 7 #";case 3"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 28 #"; sum equals number. perfect"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 1 #"="
-0 0 23 3 1 #" "
-0 0 14 3 3 #"val"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 19 3 9 #"\"Perfect\""
-0 0 23 3 1 #"]"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 17 3 45 #";; Contract: (print-perfect-nums num) -> void"
-0 0 23 29 1 #"\n"
-0 0 17 3 30 #";; Input:    num: integer >= 0"
-0 0 23 29 1 #"\n"
-0 0 17 3 39 #";; Purpose:  prints \"n: perfect\" for th"
-0 0 17 3 17 #"e the first \"num\""
-0 0 23 29 1 #"\n"
-0 0 17 3 19 #";; perfect numbers."
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 18 #"print-perfect-nums"
-0 0 23 29 1 #"\n"
-0 0 23 3 2 #"  "
-0 0 23 3 1 #"("
-0 0 15 3 6 #"lambda"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 17 3 19 #";title for function"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 23 3 1 #"("
-0 0 14 3 6 #"printf"
-0 0 23 3 1 #" "
-0 0 19 3 1 #"\""
-0 0 19 3 1 #"\\"
-0 0 19 3 33 #"nThe first ~a perfect numbers \\n\""
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 17 3 26 #";creates local environment"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 23 3 1 #"("
-0 0 15 3 5 #"local"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"("
-0 0 23 3 1 #"["
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 9 #"print-loc"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 17 3 18 #";uses num2 locally"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 17 3 35 #";num1 is amount of numbers to print"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 17 3 45 #";num2 is current number evaluated by a-d-or-p"
-0 0 23 29 1 #"\n"
-0 0 23 3 9 #"         "
-0 0 23 3 1 #"("
-0 0 15 3 6 #"lambda"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 11 #"           "
-0 0 23 3 1 #"("
-0 0 15 3 4 #"cond"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 52 #";ends when num1=0. Then no conditions are satisfied."
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 54 #";recursive case 1. checks if number is perfect. if so,"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 11 #";prints it."
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 3 #"and"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #">"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"0"
-0 0 23 3 1 #")"
-0 0 23 3 2 #" ("
-0 0 14 3 6 #"equal?"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 8 #"a-d-or-p"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #")"
-0 0 23 3 1 #" "
-0 0 19 3 9 #"\"Perfect\""
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 15 #"              ("
-0 0 14 3 6 #"printf"
-0 0 23 3 1 #" "
-0 0 19 3 11 #"\"~a: ~a \\n\""
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #" "
-0 0 19 3 9 #"\"Perfect\""
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 14 #"              "
-0 0 17 3 49 #";recursive call. decrements num1, increments num2"
-0 0 23 29 1 #"\n"
-0 0 23 3 15 #"              ("
-0 0 14 3 9 #"print-loc"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"-"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #")"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"+"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 17 3 51 #";recursive case 2. number not perfect. move up one."
-0 0 23 29 1 #"\n"
-0 0 23 3 13 #"             "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 1 #">"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"0"
-0 0 23 3 1 #")"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 9 #"print-loc"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num1"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"+"
-0 0 23 3 1 #" "
-0 0 14 3 4 #"num2"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 11 #";local call"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"("
-0 0 14 3 9 #"print-loc"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"num"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"2"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 18 #"print-perfect-nums"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"0"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 18 #"print-perfect-nums"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 18 #"print-perfect-nums"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"2"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 18 #"print-perfect-nums"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"3"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"display"
-0 0 23 3 1 #" "
-0 0 19 3 1 #"\""
-0 0 19 3 1 #"\\"
-0 0 19 3 1 #"n"
-0 0 19 3 1 #"\\"
-0 0 19 3 37 #"nProblem 2: Printing All Numbers\\n\\n\""
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 17 3 38 #";; Contract: (print-all-n top) -> void"
-0 0 23 29 1 #"\n"
-0 0 17 3 39 #";; Input:    top: positive integer >= 2"
-0 0 23 29 1 #"\n"
-0 0 17 3 48 #";; Purpose:  prints \"n: quality\" for each n<=top"
-0 0 23 29 1 #"\n"
-0 0 17 3 51 #";; where quality is abundant, deficient, or perfect"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 15 3 6 #"define"
-0 0 23 3 1 #" "
-0 0 14 3 11 #"print-all-n"
-0 0 23 29 1 #"\n"
-0 0 23 3 2 #"  "
-0 0 23 3 1 #"("
-0 0 15 3 6 #"lambda"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 3 #"top"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 4 #"    "
-0 0 23 3 1 #"("
-0 0 15 3 4 #"cond"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 17 3 25 #";only 1 case, when top>=2"
-0 0 23 29 1 #"\n"
-0 0 23 3 6 #"      "
-0 0 23 3 1 #"["
-0 0 23 3 1 #"("
-0 0 14 3 2 #">="
-0 0 23 3 1 #" "
-0 0 14 3 3 #"top"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"2"
-0 0 23 3 1 #")"
-0 0 23 3 1 #" "
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 17 3 31 #";prints the statement of number"
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 23 3 1 #"("
-0 0 14 3 6 #"printf"
-0 0 23 3 1 #" "
-0 0 19 3 11 #"\"~a: ~a \\n\""
-0 0 23 3 1 #" "
-0 0 14 3 3 #"top"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 8 #"a-d-or-p"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"top"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 17 3 24 #";recursive call on top-1"
-0 0 23 29 1 #"\n"
-0 0 23 3 7 #"       "
-0 0 23 3 1 #"("
-0 0 14 3 11 #"print-all-n"
-0 0 23 3 1 #" "
-0 0 23 3 1 #"("
-0 0 14 3 1 #"-"
-0 0 23 3 1 #" "
-0 0 14 3 3 #"top"
-0 0 23 3 1 #" "
-0 0 20 3 1 #"1"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #"]"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 17 3 23 #";; Post-function tests:"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 11 #"print-all-n"
-0 0 23 3 1 #" "
-0 0 20 3 4 #"1000"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 17 3 2 #";("
-0 0 17 3 18 #"print-perfect-nums"
-0 0 17 3 1 #" "
-0 0 17 3 2 #"4)"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"newline"
-0 0 23 3 1 #")"
-0 0 23 29 1 #"\n"
-0 0 23 29 1 #"\n"
-0 0 23 3 1 #"("
-0 0 14 3 7 #"newline"
-0 0 23 3 1 #")"
-0           0
+(newline)
+(newline)
+
+
+(display "Problem 1: Printing Perfect Numbers\n\n")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Contract: (find-factors num) -> integer
+;; Input:    num: positive integer >= 2
+;; Purpose:  returns the sum of the factors of num other than itself
+
+;; Function definition:
+(define find-factors
+  (lambda (num)
+    ;creates local environment
+    (local
+      ([define fac-loc
+         ;uses num2 and acc1 locally
+         ;num2 is a divisor. acc1 is a sum of factors
+         ;acc is a form of dynamic programming. it saves the past values.
+         (lambda (num1 num2 acc1)
+           (cond
+             ;base case. if num2> num1/2, then num2 can't be a factor
+             ;end the function
+             [(> num2 (/ num1 2))
+              acc1]
+             ;recursive case 1. if num2 divides num1, add to sum of factors
+             [(integer? (/ num1 num2)) 
+              (fac-loc num1 (+ 1 num2) (+ num2 acc1))]
+             ;recursive case 2. if num2 doesn't divide num1, don't add it.
+             ;just call fac-loc for num2+1
+             [else (fac-loc num1 (+ 1 num2) acc1)]))])
+      ;local call
+      (fac-loc num 1 0))))
+
+;; Contract: (a-d-or-p num) -> "Abundant", "Deficient", or "Perfect"
+;; Input:    num: positive number >= 2
+;; Purpose:  returns whether num is abundant, deficient, or perfect
+
+(define a-d-or-p
+  (lambda (num)
+    ;stores the sum of the factors so that we make this call only once
+    ;this is a form of memoization, although a really basic one
+    (define val (find-factors num))
+    (cond
+      ;case 1
+      ; sum is greater than number. abundant
+      [(> val num)
+       "Abundant"]
+      ;case 2
+      ; sum is less than number. deficient
+      [(< val num)
+       "Deficient"]
+      ;case 3
+      ; sum equals number. perfect
+      [(= val num)
+       "Perfect"])))
+
+;; Contract: (print-perfect-nums num) -> void
+;; Input:    num: integer >= 0
+;; Purpose:  prints "n: perfect" for the the first "num"
+;; perfect numbers.
+
+(define print-perfect-nums
+  (lambda (num)
+    ;title for function
+    (printf "\nThe first ~a perfect numbers \n" num)
+    ;creates local environment
+    (local
+      ([define print-loc
+         ;uses num2 locally
+         ;num1 is amount of numbers to print
+         ;num2 is current number evaluated by a-d-or-p
+         (lambda (num1 num2)
+           (cond
+             ;ends when num1=0. Then no conditions are satisfied.
+             
+             ;recursive case 1. checks if number is perfect. if so,
+             ;prints it.
+             [(and (> num1 0) (equal? (a-d-or-p num2) "Perfect"))
+              (printf "~a: ~a \n" num2 "Perfect")
+              ;recursive call. decrements num1, increments num2
+              (print-loc (- num1 1) (+ num2 1))]
+             ;recursive case 2. number not perfect. move up one.
+             [(> num1 0) (print-loc num1 (+ num2 1))]))])
+      ;local call
+      (print-loc num 2))))
+
+; Post-function tests:
+(print-perfect-nums 0)
+(print-perfect-nums 1)
+(print-perfect-nums 2)
+(print-perfect-nums 3)
+
+(display "\n\nProblem 2: Printing All Numbers\n\n")
+
+;; Contract: (print-all-n top) -> void
+;; Input:    top: positive integer >= 2
+;; Purpose:  prints "n: quality" for each n<=top
+;; where quality is abundant, deficient, or perfect
+
+(define print-all-n
+  (lambda (top)
+    (cond
+      ;only 1 case, when top>=2
+      [(>= top 2) 
+       ;prints the statement of number
+       (printf "~a: ~a \n" top (a-d-or-p top))
+       ;recursive call on top-1
+       (print-all-n (- top 1))])))
+
+;; Post-function tests:
+(print-all-n 1000)
+
+(newline)
+
+(newline)
